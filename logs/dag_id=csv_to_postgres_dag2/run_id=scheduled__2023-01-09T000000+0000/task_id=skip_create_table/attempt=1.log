@@ -1,0 +1,35 @@
+[2023-07-08T15:38:17.765+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: csv_to_postgres_dag2.skip_create_table scheduled__2023-01-09T00:00:00+00:00 [queued]>
+[2023-07-08T15:38:17.789+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: csv_to_postgres_dag2.skip_create_table scheduled__2023-01-09T00:00:00+00:00 [queued]>
+[2023-07-08T15:38:17.796+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2023-07-08T15:38:17.831+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): skip_create_table> on 2023-01-09 00:00:00+00:00
+[2023-07-08T15:38:17.842+0000] {standard_task_runner.py:57} INFO - Started process 103 to run task
+[2023-07-08T15:38:17.863+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'csv_to_postgres_dag2', 'skip_create_table', 'scheduled__2023-01-09T00:00:00+00:00', '--job-id', '113', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmpbykqe_gv']
+[2023-07-08T15:38:17.871+0000] {standard_task_runner.py:85} INFO - Job 113: Subtask skip_create_table
+[2023-07-08T15:38:18.069+0000] {task_command.py:410} INFO - Running <TaskInstance: csv_to_postgres_dag2.skip_create_table scheduled__2023-01-09T00:00:00+00:00 [running]> on host 9aa32a2a42d2
+[2023-07-08T15:38:18.272+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='csv_to_postgres_dag2' AIRFLOW_CTX_TASK_ID='skip_create_table' AIRFLOW_CTX_EXECUTION_DATE='2023-01-09T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-01-09T00:00:00+00:00'
+[2023-07-08T15:38:18.277+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl.py", line 70, in skip_create_table
+    if Variable.get("table_created", default_var=None) == "True":
+NameError: name 'Variable' is not defined
+[2023-07-08T15:38:18.305+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=csv_to_postgres_dag2, task_id=skip_create_table, execution_date=20230109T000000, start_date=20230708T153817, end_date=20230708T153818
+[2023-07-08T15:38:18.335+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 113 for task skip_create_table (name 'Variable' is not defined; 103)
+[2023-07-08T15:38:18.359+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-07-08T15:38:18.416+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-07-08T15:43:02.617+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: csv_to_postgres_dag2.skip_create_table scheduled__2023-01-09T00:00:00+00:00 [queued]>
+[2023-07-08T15:43:02.637+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: csv_to_postgres_dag2.skip_create_table scheduled__2023-01-09T00:00:00+00:00 [queued]>
+[2023-07-08T15:43:02.638+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2023-07-08T15:43:02.667+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): skip_create_table> on 2023-01-09 00:00:00+00:00
+[2023-07-08T15:43:02.675+0000] {standard_task_runner.py:57} INFO - Started process 167 to run task
+[2023-07-08T15:43:02.680+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'csv_to_postgres_dag2', 'skip_create_table', 'scheduled__2023-01-09T00:00:00+00:00', '--job-id', '151', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmp0v4ud9c3']
+[2023-07-08T15:43:02.684+0000] {standard_task_runner.py:85} INFO - Job 151: Subtask skip_create_table
+[2023-07-08T15:43:02.775+0000] {task_command.py:410} INFO - Running <TaskInstance: csv_to_postgres_dag2.skip_create_table scheduled__2023-01-09T00:00:00+00:00 [running]> on host 9aa32a2a42d2
+[2023-07-08T15:43:02.922+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='csv_to_postgres_dag2' AIRFLOW_CTX_TASK_ID='skip_create_table' AIRFLOW_CTX_EXECUTION_DATE='2023-01-09T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-01-09T00:00:00+00:00'
+[2023-07-08T15:43:02.940+0000] {python.py:183} INFO - Done. Returned value was: create_postgres_table
+[2023-07-08T15:43:02.977+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=csv_to_postgres_dag2, task_id=skip_create_table, execution_date=20230109T000000, start_date=20230708T154302, end_date=20230708T154302
+[2023-07-08T15:43:03.054+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-07-08T15:43:03.092+0000] {taskinstance.py:2653} INFO - 2 downstream tasks scheduled from follow-on schedule check

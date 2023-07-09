@@ -1,0 +1,104 @@
+[2023-07-08T15:34:50.696+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: csv_to_postgres_dag2.create_postgres_table scheduled__2023-01-13T00:00:00+00:00 [queued]>
+[2023-07-08T15:34:50.707+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: csv_to_postgres_dag2.create_postgres_table scheduled__2023-01-13T00:00:00+00:00 [queued]>
+[2023-07-08T15:34:50.708+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2023-07-08T15:34:50.719+0000] {taskinstance.py:1327} INFO - Executing <Task(PostgresOperator): create_postgres_table> on 2023-01-13 00:00:00+00:00
+[2023-07-08T15:34:50.724+0000] {standard_task_runner.py:57} INFO - Started process 160 to run task
+[2023-07-08T15:34:50.727+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'csv_to_postgres_dag2', 'create_postgres_table', 'scheduled__2023-01-13T00:00:00+00:00', '--job-id', '107', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmpw5mbty8r']
+[2023-07-08T15:34:50.731+0000] {standard_task_runner.py:85} INFO - Job 107: Subtask create_postgres_table
+[2023-07-08T15:34:50.771+0000] {task_command.py:410} INFO - Running <TaskInstance: csv_to_postgres_dag2.create_postgres_table scheduled__2023-01-13T00:00:00+00:00 [running]> on host 9aa32a2a42d2
+[2023-07-08T15:34:50.830+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='csv_to_postgres_dag2' AIRFLOW_CTX_TASK_ID='create_postgres_table' AIRFLOW_CTX_EXECUTION_DATE='2023-01-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-01-13T00:00:00+00:00'
+[2023-07-08T15:34:50.831+0000] {sql.py:265} INFO - Executing: 
+CREATE TABLE reviews (
+    reviewer_id INTEGER,
+    store_name VARCHAR(255),
+    category VARCHAR(255),
+    store_address VARCHAR(255),
+    latitude FLOAT,
+    longitude FLOAT,
+    rating_count INTEGER,
+    review_time VARCHAR(255),
+    review TEXT,
+    rating VARCHAR(10)
+);
+[2023-07-08T15:34:50.838+0000] {base.py:73} INFO - Using connection ID 'postgres_***' for task execution.
+[2023-07-08T15:34:51.034+0000] {base.py:73} INFO - Using connection ID 'postgres_***' for task execution.
+[2023-07-08T15:34:51.039+0000] {sql.py:375} INFO - Running statement: 
+CREATE TABLE reviews (
+    reviewer_id INTEGER,
+    store_name VARCHAR(255),
+    category VARCHAR(255),
+    store_address VARCHAR(255),
+    latitude FLOAT,
+    longitude FLOAT,
+    rating_count INTEGER,
+    review_time VARCHAR(255),
+    review TEXT,
+    rating VARCHAR(10)
+);, parameters: None
+[2023-07-08T15:34:51.041+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 277, in execute
+    **extra_kwargs,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 349, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 380, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.DuplicateTable: relation "reviews" already exists
+
+[2023-07-08T15:34:51.054+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=csv_to_postgres_dag2, task_id=create_postgres_table, execution_date=20230113T000000, start_date=20230708T153450, end_date=20230708T153451
+[2023-07-08T15:34:51.066+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 107 for task create_postgres_table (relation "reviews" already exists
+; 160)
+[2023-07-08T15:34:51.141+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-07-08T15:34:51.163+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-07-08T15:43:06.230+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: csv_to_postgres_dag2.create_postgres_table scheduled__2023-01-13T00:00:00+00:00 [queued]>
+[2023-07-08T15:43:06.242+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: csv_to_postgres_dag2.create_postgres_table scheduled__2023-01-13T00:00:00+00:00 [queued]>
+[2023-07-08T15:43:06.243+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2023-07-08T15:43:06.257+0000] {taskinstance.py:1327} INFO - Executing <Task(PostgresOperator): create_postgres_table> on 2023-01-13 00:00:00+00:00
+[2023-07-08T15:43:06.263+0000] {standard_task_runner.py:57} INFO - Started process 258 to run task
+[2023-07-08T15:43:06.268+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'csv_to_postgres_dag2', 'create_postgres_table', 'scheduled__2023-01-13T00:00:00+00:00', '--job-id', '188', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmp3_e68ew5']
+[2023-07-08T15:43:06.270+0000] {standard_task_runner.py:85} INFO - Job 188: Subtask create_postgres_table
+[2023-07-08T15:43:06.325+0000] {task_command.py:410} INFO - Running <TaskInstance: csv_to_postgres_dag2.create_postgres_table scheduled__2023-01-13T00:00:00+00:00 [running]> on host 9aa32a2a42d2
+[2023-07-08T15:43:06.398+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='csv_to_postgres_dag2' AIRFLOW_CTX_TASK_ID='create_postgres_table' AIRFLOW_CTX_EXECUTION_DATE='2023-01-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-01-13T00:00:00+00:00'
+[2023-07-08T15:43:06.399+0000] {sql.py:265} INFO - Executing: 
+CREATE TABLE reviews (
+    reviewer_id INTEGER,
+    store_name VARCHAR(255),
+    category VARCHAR(255),
+    store_address VARCHAR(255),
+    latitude FLOAT,
+    longitude FLOAT,
+    rating_count INTEGER,
+    review_time VARCHAR(255),
+    review TEXT,
+    rating VARCHAR(10)
+);
+[2023-07-08T15:43:06.407+0000] {base.py:73} INFO - Using connection ID 'postgres_***' for task execution.
+[2023-07-08T15:43:06.459+0000] {base.py:73} INFO - Using connection ID 'postgres_***' for task execution.
+[2023-07-08T15:43:06.464+0000] {sql.py:375} INFO - Running statement: 
+CREATE TABLE reviews (
+    reviewer_id INTEGER,
+    store_name VARCHAR(255),
+    category VARCHAR(255),
+    store_address VARCHAR(255),
+    latitude FLOAT,
+    longitude FLOAT,
+    rating_count INTEGER,
+    review_time VARCHAR(255),
+    review TEXT,
+    rating VARCHAR(10)
+);, parameters: None
+[2023-07-08T15:43:06.466+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 277, in execute
+    **extra_kwargs,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 349, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 380, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.DuplicateTable: relation "reviews" already exists
+
+[2023-07-08T15:43:06.476+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=csv_to_postgres_dag2, task_id=create_postgres_table, execution_date=20230113T000000, start_date=20230708T154306, end_date=20230708T154306
+[2023-07-08T15:43:06.490+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 188 for task create_postgres_table (relation "reviews" already exists
+; 258)
+[2023-07-08T15:43:06.519+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-07-08T15:43:06.533+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

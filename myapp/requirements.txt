@@ -1,0 +1,4 @@
+plotly==5.3.1
+dash==1.20.0
+werkzeug==1.0.1
+markupsafe==1.1.1

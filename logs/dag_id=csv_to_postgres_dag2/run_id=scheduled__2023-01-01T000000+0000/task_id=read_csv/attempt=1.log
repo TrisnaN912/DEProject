@@ -1,0 +1,26 @@
+[2023-07-08T15:34:45.121+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: csv_to_postgres_dag2.read_csv scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2023-07-08T15:34:45.131+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: csv_to_postgres_dag2.read_csv scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2023-07-08T15:34:45.131+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2023-07-08T15:34:45.146+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): read_csv> on 2023-01-01 00:00:00+00:00
+[2023-07-08T15:34:45.152+0000] {standard_task_runner.py:57} INFO - Started process 78 to run task
+[2023-07-08T15:34:45.157+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'csv_to_postgres_dag2', 'read_csv', 'scheduled__2023-01-01T00:00:00+00:00', '--job-id', '78', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmpx36b8fe_']
+[2023-07-08T15:34:45.160+0000] {standard_task_runner.py:85} INFO - Job 78: Subtask read_csv
+[2023-07-08T15:34:45.217+0000] {task_command.py:410} INFO - Running <TaskInstance: csv_to_postgres_dag2.read_csv scheduled__2023-01-01T00:00:00+00:00 [running]> on host 9aa32a2a42d2
+[2023-07-08T15:34:45.302+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='csv_to_postgres_dag2' AIRFLOW_CTX_TASK_ID='read_csv' AIRFLOW_CTX_EXECUTION_DATE='2023-01-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-01-01T00:00:00+00:00'
+[2023-07-08T15:34:45.460+0000] {python.py:183} INFO - Done. Returned value was: None
+[2023-07-08T15:34:45.474+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=csv_to_postgres_dag2, task_id=read_csv, execution_date=20230101T000000, start_date=20230708T153445, end_date=20230708T153445
+[2023-07-08T15:34:45.609+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-07-08T15:34:45.659+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-07-08T15:42:59.151+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: csv_to_postgres_dag2.read_csv scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2023-07-08T15:42:59.162+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: csv_to_postgres_dag2.read_csv scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2023-07-08T15:42:59.163+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2023-07-08T15:42:59.196+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): read_csv> on 2023-01-01 00:00:00+00:00
+[2023-07-08T15:42:59.201+0000] {standard_task_runner.py:57} INFO - Started process 88 to run task
+[2023-07-08T15:42:59.206+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'csv_to_postgres_dag2', 'read_csv', 'scheduled__2023-01-01T00:00:00+00:00', '--job-id', '130', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmpzwu3m0cx']
+[2023-07-08T15:42:59.209+0000] {standard_task_runner.py:85} INFO - Job 130: Subtask read_csv
+[2023-07-08T15:42:59.275+0000] {task_command.py:410} INFO - Running <TaskInstance: csv_to_postgres_dag2.read_csv scheduled__2023-01-01T00:00:00+00:00 [running]> on host 9aa32a2a42d2
+[2023-07-08T15:42:59.367+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='csv_to_postgres_dag2' AIRFLOW_CTX_TASK_ID='read_csv' AIRFLOW_CTX_EXECUTION_DATE='2023-01-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-01-01T00:00:00+00:00'
+[2023-07-08T15:42:59.524+0000] {python.py:183} INFO - Done. Returned value was: None
+[2023-07-08T15:42:59.540+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=csv_to_postgres_dag2, task_id=read_csv, execution_date=20230101T000000, start_date=20230708T154259, end_date=20230708T154259
+[2023-07-08T15:42:59.659+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-07-08T15:42:59.709+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check

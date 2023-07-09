@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  de-jupyter:
+    container_name: de-jupyter
+    image: de/jupyter
+    ports:
+      - ${JUPYTER_PORT}:8888
+      - 4040:4040
+      - 4041:4041
+    volumes:
+      - ../:/resources
+      - ../notebooks:/home/jovyan/
+      - ../data:/data
+    networks:
+      - de-network
+
+networks:
+  de-network:
+    driver: bridge
